@@ -70,8 +70,9 @@ export type mockFetchAction = 'sign_in' | 'get_words'
 export interface IProfileField {
     label: string
     type: HTMLInputTypeAttribute
-    defaultValue: string | number | boolean;
-    selectValue?: string[]
+    controlEl: string
+    name: keyof User
+    data: User
 }
 
 export interface IEditViewProps {
@@ -79,9 +80,13 @@ export interface IEditViewProps {
     userInterests:string[]
     userSkills:string[]
 }
+export type FormRef = Record<keyof User, string|HTMLElement|null|number|boolean>
+export type FormRefCurr = {current:FormRef}
 
 export interface IFieldProps extends IProfileField {
-    ref?:typeof useRef
+    isEditField:boolean
+    customRef?:FormRefCurr
     userInterests:string[]
     userSkills:string[]
 }
+

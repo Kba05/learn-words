@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../../app/store'
-import { AppState} from '../../types/types'
+import { AppState, User} from '../../types/types'
 import { fetchMock } from '../../mocks/mockServer'
 
 
@@ -80,22 +80,24 @@ export const appStateSlice = createSlice({
   reducers: {
     signOut: (state) => {
       state.signIn = initialSignIn
+    },
+    saveFormFields: (state, payload:PayloadAction<User>)=>{
+      const data = payload.payload
+      state.user = {
+        ...data,
+        age:Number(data.age), 
+        salary:Number(data.salary),  
+        experience: Number(data.experience)
+      }
     }
   },
   extraReducers(builder) {
     builder
-    .addCase(signInFetch.pending, (state, {payload}: PayloadAction<any>) => {
-
-    })
     .addCase(signInFetch.fulfilled, (state, {payload}: PayloadAction<any>) => {
       if(!payload.error) state.signIn.success = true
       state.user = payload.data
       state.signIn.error = payload.error
       state.signIn.error_text = payload.errorText
-      
-    })
-    .addCase(getWordsWithCategoriesFetch.pending, (state, {payload}: PayloadAction<any>) => {
-
     })
     .addCase(getWordsWithCategoriesFetch.fulfilled, (state, {payload}: PayloadAction<any>) => {
       state.words = payload.data

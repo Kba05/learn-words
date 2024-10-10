@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ManageAccounts, LocalLibrary, Login, Logout } from '@mui/icons-material';
-import { AppBar, Avatar, Box, Button, Divider, IconButton, Menu, MenuItem, Typography } from '@mui/material';
+import { AppBar, Avatar, Box, Button, Divider, Menu, MenuItem, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../app/hooks';
 import { signOut } from '../features/AppState/appStateReducer';
