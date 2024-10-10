@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react'
 import { Field } from './Field'
 import { v4 as uuidv4 } from 'uuid';
-import { FormRef, IEditViewProps } from '../types/types';
+import { IEditViewProps, User } from '../types/types';
 import { Box, Button, Divider } from '@mui/material';
 import { ModeEdit, Save } from '@mui/icons-material';
+import { useAppDispatch } from '../app/hooks';
+import { saveFormFields } from '../features/AppState/appStateReducer';
 
 export const EditView = (props: IEditViewProps) => {
   const { fields, userSkills, userInterests } = props
@@ -29,14 +31,16 @@ export const EditView = (props: IEditViewProps) => {
     description: "",
     notes: ""
   }
-  const formRef = useRef<FormRef>(initialRef)
+  const formRef = useRef<User>(initialRef)
+  const dispatch = useAppDispatch()
 
-  const saveFormFields = ()=>{
+  const saveFormFieldsa = ()=>{
+    dispatch(()=>saveFormFields(formRef.current))
     console.log(formRef.current)
   }
   const handleEditSave = ()=>{
     if(!isEditForm){
-      saveFormFields()
+      saveFormFieldsa()
     }
     setIsEditForm(!isEditForm)
   }

@@ -83,12 +83,7 @@ export const appStateSlice = createSlice({
     },
     saveFormFields: (state, payload:PayloadAction<User>)=>{
       const data = payload.payload
-      state.user = {
-        ...data,
-        age:Number(data.age), 
-        salary:Number(data.salary),  
-        experience: Number(data.experience)
-      }
+      state.user = data
     }
   },
   extraReducers(builder) {
@@ -105,7 +100,7 @@ export const appStateSlice = createSlice({
   }
 })
 
-export const { signOut } = appStateSlice.actions
+export const { signOut, saveFormFields} = appStateSlice.actions
 
 export const selectUser = (state: RootState) => state.appState.user
 export const selectWords = (state: RootState) => state.appState.words

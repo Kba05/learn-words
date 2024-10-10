@@ -85,7 +85,7 @@ export type FormRefCurr = {current:FormRef}
 
 export interface IFieldProps extends IProfileField {
     isEditField:boolean
-    customRef?:FormRefCurr
+    customRef:FormRefCurr
     userInterests:string[]
     userSkills:string[]
 }
