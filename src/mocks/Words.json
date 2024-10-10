@@ -1,0 +1,288 @@
+[
+    {
+        "id": 1001,
+        "category": "Word of the Day",
+        "name": "benevolent",
+        "type": "adjective",
+        "meaning": "well meaning and kindly.",
+        "example": "a benevolent smile",
+        "translate": [
+            "доброжелательный",
+            "благожелательный",
+            "благосклонный"
+        ]
+    },
+    {
+        "id": 1002,
+        "category": "Positive Adjectives",
+        "name": "serendipity",
+        "type": "noun",
+        "meaning": "the occurrence and development of events by chance in a happy or beneficial way.",
+        "example": "By serendipity, she found the perfect job.",
+        "translate": [
+            "случайность",
+            "неожиданная удача",
+            "счастливый случай"
+        ]
+    },
+    {
+        "id": 1003,
+        "category": "Negative Adjectives",
+        "name": "quixotic",
+        "type": "adjective",
+        "meaning": "exceedingly idealistic; unrealistic and impractical.",
+        "example": "a quixotic scheme to end world hunger",
+        "translate": [
+            "химерический",
+            "нереальный",
+            "фантастический"
+        ]
+    },
+    {
+        "id": 1004,
+        "category": "Nouns",
+        "name": "melancholy",
+        "type": "noun",
+        "meaning": "a feeling of pensive sadness, with no obvious cause.",
+        "example": "a deep melancholy settled over her",
+        "translate": [
+            "меланхолия",
+            "грусть",
+            "тоска"
+        ]
+    },
+    {
+        "id": 1005,
+        "category": "Verbs",
+        "name": "ubiquitous",
+        "type": "adjective",
+        "meaning": "present, appearing, or found everywhere.",
+        "example": "the ubiquitous presence of the media",
+        "translate": [
+            "вездесущий",
+            "всепроникающий",
+            " повсеместный"
+        ]
+    },
+    {
+        "id": 1006,
+        "category": "Literary Terms",
+        "name": "dilemma",
+        "type": "noun",
+        "meaning": "a situation in which a difficult choice has to be made between two or more alternatives, especially equally undesirable ones.",
+        "example": "She faced a dilemma: should she stay or should she go?",
+        "translate": [
+            "дилемма",
+            "затруднительное положение",
+            "проблема выбора"
+        ]
+    },
+    {
+        "id": 1007,
+        "category": "Science Words",
+        "name": "eloquent",
+        "type": "adjective",
+        "meaning": "fluent or persuasive in speaking or writing.",
+        "example": "an eloquent speech",
+        "translate": [
+            "красноречивый",
+            "говорящий",
+            "убедительный"
+        ]
+    },
+    {
+        "id": 1008,
+        "category": "Phrases",
+        "name": "intangible",
+        "type": "adjective",
+        "meaning": "unable to be touched or grasped; not having a physical presence.",
+        "example": "the intangible qualities of a good teacher",
+        "translate": [
+            "неосязаемый",
+            "нематериальный",
+            "невидимый"
+        ]
+    },
+    {
+        "id": 1009,
+        "category": "Idioms",
+        "name": "cacophony",
+        "type": "noun",
+        "meaning": "a harsh, discordant mixture of sounds.",
+        "example": "a cacophony of noise from the city streets",
+        "translate": [
+            "какофония",
+            "диссонанс",
+            "шум"
+        ]
+    },
+    {
+        "id": 1010,
+        "category": "Slang",
+        "name": "ephemeral",
+        "type": "adjective",
+        "meaning": "lasting for a very short time.",
+        "example": "the ephemeral joys of youth",
+        "translate": [
+            "эфемерный",
+            "кратковременный",
+            "недолговечный"
+        ]
+    },
+    {
+        "id": 1011,
+        "category": "Positive Adjectives",
+        "name": "enigma",
+        "type": "noun",
+        "meaning": "a person or thing that is mysterious, puzzling, or difficult to understand.",
+        "example": "Her disappearance remains an enigma.",
+        "translate": [
+            "загадка",
+            "тайна",
+            "неразгаданное"
+        ]
+    },
+    {
+        "id": 1012,
+        "category": "Verbs",
+        "name": "meander",
+        "type": "verb",
+        "meaning": "to follow a winding course.",
+        "example": "The river meanders through the valley.",
+        "translate": [
+            "извиваться",
+            "блуждать",
+            "петлять"
+        ]
+    },
+    {
+        "id": 1013,
+        "category": "Literary Terms",
+        "name": "anachronism",
+        "type": "noun",
+        "meaning": "a thing belonging or appropriate to a period other than that in which it exists, especially a person or thing that seems to belong to an earlier time.",
+        "example": "The old steam engine was an anachronism in the modern factory.",
+        "translate": [
+            "анахронизм",
+            "несоответствие времени",
+            "ошибка в хронологии"
+        ]
+    },
+    {
+        "id": 1014,
+        "category": "Science Words",
+        "name": "symbiosis",
+        "type": "noun",
+        "meaning": "interaction between two different organisms living in close physical association, typically to the advantage of both.",
+        "example": "The relationship between bees and flowers is an example of symbiosis.",
+        "translate": [
+            "симбиоз",
+            "взаимовыгодное сосуществование",
+            "сотрудничество"
+        ]
+    },
+    {
+        "id": 1015,
+        "category": "Phrases",
+        "name": "once in a blue moon",
+        "type": "phrase",
+        "meaning": "very rarely.",
+        "example": "We only see each other once in a blue moon.",
+        "translate": [
+            "крайне редко",
+            "от случая к случаю",
+            "раз в сто лет"
+        ]
+    },
+    {
+        "id": 1016,
+        "category": "Idioms",
+        "name": "kick the bucket",
+        "type": "idiom",
+        "meaning": "to die.",
+        "example": "He kicked the bucket last year.",
+        "translate": [
+            "скончаться",
+            "умереть",
+            "отдать концы"
+        ]
+    },
+    {
+        "id": 1017,
+        "category": "Slang",
+        "name": "lit",
+        "type": "slang",
+        "meaning": "exciting, enjoyable, or impressive.",
+        "example": "The party was lit!",
+        "translate": [
+            "круто",
+            "отпадно",
+            "класс"
+        ]
+    },
+    {
+        "id": 1018,
+        "category": "Negative Adjectives",
+        "name": "callous",
+        "type": "adjective",
+        "meaning": "showing or having an insensitive and cruel disregard for others.",
+        "example": "a callous disregard for human suffering",
+        "translate": [
+            "бессердечный",
+            "жестокий",
+            "бездушный"
+        ]
+    },
+    {
+        "id": 1019,
+        "category": "Nouns",
+        "name": "inscrutable",
+        "type": "adjective",
+        "meaning": "impossible to understand or interpret.",
+        "example": "Her expression was inscrutable.",
+        "translate": [
+            "непостижимый",
+            "неразгаданный",
+            "непроницаемый"
+        ]
+    },
+    {
+        "id": 1020,
+        "category": "Verbs",
+        "name": "revere",
+        "type": "verb",
+        "meaning": "to respect or admire greatly.",
+        "example": "He was revered as a national hero.",
+        "translate": [
+            "почитать",
+            "уважать",
+            "восхищаться"
+        ]
+    },
+    {
+        "id": 1021,
+        "category": "Word of the Day",
+        "name": "ineffable",
+        "type": "adjective",
+        "meaning": "too great or extreme to be expressed or described in words.",
+        "example": "The beauty of the sunset was ineffable.",
+        "translate": [
+            "невыразимый",
+            "неописуемый",
+            "непередаваемый"
+        ]
+    },
+    {
+        "id": 1022,
+        "category": "Word of the Day",
+        "name": "peripatetic",
+        "type": "adjective",
+        "meaning": "traveling from place to place, especially working or living in various places for relatively short periods.",
+        "example": "a peripatetic musician",
+        "translate": [
+            "странствующий",
+            "кочующий",
+            "передвижной"
+        ]
+    }
+]

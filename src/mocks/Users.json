@@ -1,0 +1,52 @@
+[
+    {
+        "id": 11001,
+        "password": "admin",
+        "info": {
+            "login": "admin",
+            "first_name": "Admin",
+            "last_name": "",
+            "email": "admin@test.ru",
+            "birth_date": "1990-01-01T12:00:00Z",
+            "age": 33,
+            "is_active": true,
+            "country": "Russia",
+            "city": "Moscow",
+            "address": "Some street, 123",
+            "phone": "1234567890",
+            "interest" :"programming",
+            "skill":"JavaScript",
+            "education": "Higher Education",
+            "experience": 5,
+            "salary": 100000,
+            "job_title": "Software Engineer",
+            "description": "Experienced software engineer with a strong background in JavaScript and Python.",
+            "notes": "Some additional notes about the user."
+        }
+    },
+    {
+        "id": 11002,
+        "password": "ivan",
+        "info": {
+            "login": "ivan",
+            "first_name": "Ivan",
+            "last_name": "Ivanov",
+            "email": "ivan@test.ru",
+            "birth_date": "1998-05-27T12:00:00Z",
+            "age": 25,
+            "is_active": true,
+            "country": "Ukraine",
+            "city": "Kiev",
+            "address": "Another street, 456",
+            "phone": "9876543210",
+            "interest" :"gaming",
+            "skill":"Java",
+            "education": "Bachelor's Degree",
+            "experience": 3,
+            "salary": 80000,
+            "job_title": "Web Developer",
+            "description": "Junior web developer with experience in Java and C++.",
+            "notes": "Some notes about Ivan's skills and goals."
+        }
+    }
+]
