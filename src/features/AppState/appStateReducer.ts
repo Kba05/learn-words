@@ -63,7 +63,7 @@ export const appStateSlice = createSlice({
       state.signIn = initialSignIn
     },
     saveFormFields: (state, payload:PayloadAction<User>)=>{
-      state.user = payload.payload
+      state.user = {...state.user,...payload.payload}
     }
   },
   extraReducers(builder) {

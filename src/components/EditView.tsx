@@ -13,28 +13,7 @@ export const EditView = (props: IEditViewProps) => {
   const [isEditForm, setIsEditForm] = useState<boolean>(false)
   const fields = getArrayOfFields(userInfo)
 
-  const initialRef = {
-    login: "",
-    first_name: "",
-    last_name: "",
-    email: "",
-    birth_date: "",
-    age: 0,
-    is_active: false,
-    country: "",
-    city: "",
-    address: "",
-    phone: "",
-    interest: "",
-    skill: "",
-    education: "",
-    experience: 0,
-    salary: 0,
-    job_title: "",
-    description: "",
-    notes: ""
-  }
-
+  const initialRef:User = JSON.parse(JSON.stringify(userInfo))
   const formRef = useRef<User>(initialRef)
   
   const dispatch = useAppDispatch()
