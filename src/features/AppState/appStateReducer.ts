@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../../app/store'
 import { AppState, User} from '../../types/types'
 import { fetchMock } from '../../mocks/mockServer'
+import { API_ACTIONS, initialInterests, initialSkills } from '../../constants/constants'
 
 
 const initialSignIn = {
@@ -31,23 +32,7 @@ const initialUser = {
   notes: ""
 }
 
-const initialInterests =  [
-  "programming",
-  "music",
-  "sports",
-  "gaming",
-  "travel",
-  "photography"
-]
-const initialSkills = [
-  "JavaScript",
-  "Python",
-  "HTML",
-  "CSS",
-  "Java",
-  "C++",
-  "SQL"
-]
+
 
 const initialState: AppState = {
   user: initialUser,
@@ -57,11 +42,7 @@ const initialState: AppState = {
   skills:initialSkills,
   interests: initialInterests,
 }
-enum API_ACTIONS {
-  SIGN_IN = 'sign_in',
-  GET_WORDS = 'get_words',
-  GET_WORDS_CATEGORIES = 'get_words_categories'
-}
+
 
 export const signInFetch = createAsyncThunk('appData/signInFetch', async (payload:any) => {
   const user = await fetchMock(API_ACTIONS.SIGN_IN, payload);
@@ -82,8 +63,7 @@ export const appStateSlice = createSlice({
       state.signIn = initialSignIn
     },
     saveFormFields: (state, payload:PayloadAction<User>)=>{
-      const data = payload.payload
-      state.user = data
+      state.user = payload.payload
     }
   },
   extraReducers(builder) {

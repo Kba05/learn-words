@@ -4,9 +4,10 @@ import { AppBar, Avatar, Box, Button, Divider, Menu, MenuItem, Typography } from
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../app/hooks';
 import { signOut } from '../features/AppState/appStateReducer';
-import { ISignIn } from '../types/types';
+import { ISignIn, User } from '../types/types';
+import { ROUTES } from '../constants/constants';
 
-export const Header = ({signInData}:{signInData:ISignIn}) => {
+export const Header = ({signInData,userInfo}:{signInData:ISignIn, userInfo:User}) => {
   const {success} = signInData
   const [userTooltip, setUserTooltip] = useState<HTMLElement | null>(null);
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export const Header = ({signInData}:{signInData:ISignIn}) => {
   const closeUserTooltip = () => setUserTooltip(null)
   const handleSignOut = ()=>{
     dispatch(signOut())
-    navigate('/login')
+    navigate(ROUTES.LOGIN)
   }
   return (
     <AppBar
@@ -33,7 +34,7 @@ export const Header = ({signInData}:{signInData:ISignIn}) => {
         justifyContent: "space-between"
       }}>
       <Box sx={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
-        <Link to='/' style={{textDecoration:'none',color: 'black'}}>   
+        <Link to={ROUTES.MAIN} style={{textDecoration:'none',color: 'black'}}>   
           <Typography
             variant="h5"
             component='span'
@@ -56,7 +57,7 @@ export const Header = ({signInData}:{signInData:ISignIn}) => {
         {
           success
           &&
-          <Button color='primary' sx={{ color: "black", fontWeight: 700 }} onClick={() => navigate('/cards')}>
+          <Button color='primary' sx={{ color: "black", fontWeight: 700 }} onClick={() => navigate(ROUTES.CARDS)}>
             Words
           </Button>
         }
@@ -67,8 +68,8 @@ export const Header = ({signInData}:{signInData:ISignIn}) => {
         success
           ?
           <Box>
-            <Button endIcon={<Avatar alt="Profile" src="/" />} onClick={openUserTooltip} sx={{ p: 0, color: "black"}} >
-              Name
+            <Button endIcon={<Avatar alt={userInfo.first_name} src="/" />} onClick={openUserTooltip} sx={{ p: 0, color: "black"}} >
+              {userInfo.first_name}
             </Button>
 
             <Menu
@@ -86,7 +87,7 @@ export const Header = ({signInData}:{signInData:ISignIn}) => {
               open={Boolean(userTooltip)}
               onClose={closeUserTooltip}
             >
-              <MenuItem key={'1010101'} onClick={() => navigate('/profile')}>
+              <MenuItem key={'1010101'} onClick={() => navigate(ROUTES.PROFILE)}>
                 <ManageAccounts color="primary" />Profile
               </MenuItem>
               <MenuItem key={'2020202'} onClick={handleSignOut}>
@@ -95,7 +96,7 @@ export const Header = ({signInData}:{signInData:ISignIn}) => {
             </Menu>
           </Box>
           :
-          <Button sx={{ color: "black" }} startIcon={<Login/>} onClick={() => navigate('/login')}>
+          <Button sx={{ color: "black" }} startIcon={<Login/>} onClick={() => navigate(ROUTES.LOGIN)}>
             Sign in
           </Button>
         }

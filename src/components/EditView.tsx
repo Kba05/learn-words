@@ -3,13 +3,16 @@ import { Field } from './Field'
 import { v4 as uuidv4 } from 'uuid';
 import { IEditViewProps, User } from '../types/types';
 import { Box, Button, Divider } from '@mui/material';
-import { ModeEdit, Save } from '@mui/icons-material';
+import { EditOff, ModeEdit, Save } from '@mui/icons-material';
 import { useAppDispatch } from '../app/hooks';
 import { saveFormFields } from '../features/AppState/appStateReducer';
+import { getArrayOfFields } from '../helpers/functions';
 
 export const EditView = (props: IEditViewProps) => {
-  const { fields, userSkills, userInterests } = props
+  const { userInfo, userSkills, userInterests } = props
   const [isEditForm, setIsEditForm] = useState<boolean>(false)
+  const fields = getArrayOfFields(userInfo)
+
   const initialRef = {
     login: "",
     first_name: "",
@@ -31,30 +34,27 @@ export const EditView = (props: IEditViewProps) => {
     description: "",
     notes: ""
   }
+
   const formRef = useRef<User>(initialRef)
+  
   const dispatch = useAppDispatch()
 
-  const saveFormFieldsa = ()=>{
-    dispatch(()=>saveFormFields(formRef.current))
-    console.log(formRef.current)
-  }
-  const handleEditSave = ()=>{
-    if(!isEditForm){
-      saveFormFieldsa()
-    }
-    setIsEditForm(!isEditForm)
-  }
+  const handleEdit = ()=>setIsEditForm(!isEditForm)
+
+  const handleSave = ()=>dispatch(saveFormFields(formRef.current))
 
   return (
     <>
       <Box display="flex" justifyContent='flex-end'>
+        <Button
+          disabled={!isEditForm}
+          sx={{ color: 'black'}} 
+          startIcon={<Save/>}
+          onClick={handleSave}/>
         <Button 
           sx={{ color: 'black', justifyContent:"flex-end"}} 
-          startIcon={isEditForm?<ModeEdit />:<Save/>}
-          onClick={handleEditSave}
-        >
-          {isEditForm?'Edit':'Save'}
-        </Button>
+          startIcon={isEditForm?<EditOff/>:<ModeEdit />}
+          onClick={handleEdit}/>
       </Box>
       <Divider orientation='horizontal' sx={{ my: "20px" }} />
       <form

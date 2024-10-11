@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ISignInData } from '../../types/types';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectSignInInfo, signInFetch } from '../../features/AppState/appStateReducer';
+import { ROUTES } from '../../constants/constants';
 
 export const Login = () => {
   const [isError, setIsError] = useState<Boolean>(false)
@@ -14,7 +15,7 @@ export const Login = () => {
   
   const signInInfo = useAppSelector(selectSignInInfo)
 
-  const fromPage = location.state ? location.state.from.pathname : '/'
+  const fromPage = location.state ? location.state.from.pathname : ROUTES.MAIN
 
   const signInRef = useRef<ISignInData>({
     login:'',
@@ -31,7 +32,6 @@ export const Login = () => {
     dispatch(signInFetch(payload))
   }
 
-  console.log(fromPage)
 
   return (
     <Box
@@ -48,7 +48,7 @@ export const Login = () => {
         variant="text" 
         startIcon={<Home />} 
         sx={{color:"black"}}
-        onClick={()=>navigate('/')}>
+        onClick={()=>navigate(ROUTES.MAIN)}>
         Go to main page
       </Button>
 

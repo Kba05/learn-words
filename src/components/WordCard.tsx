@@ -1,16 +1,23 @@
 import React, { useState } from 'react'
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material'
 import { WordCardProps } from '../types/types'
+import { v4 as uuidv4 } from 'uuid';
 
 export const WordCard = (props: WordCardProps) => {
   const [isTurnOver, setIsturnOver] = useState(false)
+  const [isClicked,setIsClicked] = useState(false)
   const { cardData } = props
-  const handleLearnMore = () => setIsturnOver(!isTurnOver)
+
+  const handleLearnMore = () => {
+    setIsClicked(true)
+    setIsturnOver(!isTurnOver)
+  }
 
   return (
     <Card
       sx={{
-        width: 275,
+        height: "300px",
+        width: "275px",
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -34,7 +41,7 @@ export const WordCard = (props: WordCardProps) => {
             transform: "rotateY(0deg)",
           },
         },
-        animation: isTurnOver ? 'turnOn 1s ease-in-out' : 'turnOff 1s ease-in-out',
+        animation: isClicked? (isTurnOver ? 'turnOn 1s ease-in-out' : 'turnOff 1s ease-in-out'):'none',
       }}>
       {
         !isTurnOver ?
@@ -61,7 +68,7 @@ export const WordCard = (props: WordCardProps) => {
           :
           <CardContent sx={{ textAlign: 'center' }}>
             {cardData.translate.map(word => (
-              <Typography variant="h5" component="div">
+              <Typography  key={uuidv4()} variant="h5" component="div">
                 {word}
               </Typography>
             ))}

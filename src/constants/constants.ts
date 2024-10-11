@@ -56,3 +56,34 @@ export const TYPE_OF_FIELDS = {
         controlEl: "MultiLine"
     }
 }
+
+export const initialInterests = [
+    "programming",
+    "music",
+    "sports",
+    "gaming",
+    "travel",
+    "photography"
+]
+export const initialSkills = [
+    "JavaScript",
+    "Python",
+    "HTML",
+    "CSS",
+    "Java",
+    "C++",
+    "SQL"
+]
+
+export enum ROUTES {
+    MAIN = "/",
+    LOGIN = "/login",
+    CARDS = "/cards",
+    PROFILE = "/profile"
+}
+
+export enum API_ACTIONS {
+    SIGN_IN = 'sign_in',
+    GET_WORDS = 'get_words',
+}
+

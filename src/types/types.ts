@@ -1,4 +1,4 @@
-import { HTMLInputTypeAttribute, useRef } from "react"
+import { HTMLInputTypeAttribute } from "react"
 
 export interface AppState {
     user: User
@@ -76,7 +76,7 @@ export interface IProfileField {
 }
 
 export interface IEditViewProps {
-    fields: IProfileField[]
+    userInfo: User
     userInterests:string[]
     userSkills:string[]
 }

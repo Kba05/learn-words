@@ -23,12 +23,12 @@ export const Field = (props: IFieldProps) => {
   const defValue = type !== "date" ? defaultValue : date
 
   const selectOptions = name === "interest" ? userInterests : userSkills
-  const select = <FormControl fullWidth variant={isEditField?'filled':'outlined'}>
+  const select = <FormControl fullWidth variant={isEditField?'outlined':'filled'}>
     <InputLabel>{label}</InputLabel>
     <Select
       slotProps={{
         input: {
-          readOnly: isEditField,
+          readOnly: !isEditField,
         }
       }}
       defaultValue={defaultValue}
@@ -43,12 +43,12 @@ export const Field = (props: IFieldProps) => {
   const textInput = <TextField
     slotProps={{
       input: {
-        readOnly: isEditField,
+        readOnly: !isEditField,
       }
     }}
     fullWidth
     label={label}
-    variant={isEditField?'filled':'outlined'}
+    variant={isEditField?'outlined':'filled'}
     type={type}
     multiline={controlEl === "MultiLine"}
     defaultValue={defValue}
@@ -57,7 +57,7 @@ export const Field = (props: IFieldProps) => {
 
   const checkBox = <FormControl fullWidth>
     <FormControlLabel
-      disabled={isEditField}
+      disabled={!isEditField}
       control={
         <Checkbox 
           defaultChecked={typeof defaultValue === 'boolean' && defaultValue}  

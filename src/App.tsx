@@ -8,6 +8,7 @@ import { Layout } from './components/Layout';
 import { useAppDispatch } from './app/hooks';
 import { getWordsWithCategoriesFetch } from './features/AppState/appStateReducer';
 import { RequireSignIn } from './components/RequireSignIn';
+import { ROUTES } from './constants/constants';
 
 
 const App = () => {
@@ -18,22 +19,22 @@ const App = () => {
 
   const router = createBrowserRouter([
     {
-      path: "/login",
+      path: ROUTES.LOGIN,
       element: <Login/>
     },
     {
       element: <Layout/>,
       children: [
         {
-          path: "/",
+          path: ROUTES.MAIN,
           element: <Main/>
         },
         {
-          path: "/cards",
+          path: ROUTES.CARDS,
           element: <RequireSignIn><Cards/></RequireSignIn>
         },
         {
-          path: "/profile",
+          path: ROUTES.PROFILE,
           element: <RequireSignIn><Profile/></RequireSignIn>
         },
       ]
