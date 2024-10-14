@@ -67,12 +67,14 @@ export const Field = (props: IFieldProps) => {
     />
   </FormControl>
 
+  const RENDER_EL_TYPE:Record<string, JSX.Element> = {
+    "TextField": textInput,
+    "MultiLine":textInput,
+    "Checkbox":checkBox,
+    "Select":select,
+  } 
 
-  return (
-    <>
-      {(controlEl === "TextField" || controlEl === "MultiLine") && textInput}
-      {controlEl === "Checkbox" && checkBox}
-      {controlEl === "Select" && select}
-    </>
-  )
+  const renderElement = RENDER_EL_TYPE[controlEl]
+
+  return renderElement
 }

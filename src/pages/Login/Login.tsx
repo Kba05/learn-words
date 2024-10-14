@@ -1,33 +1,33 @@
-import { Home, LocalLibrary } from '@mui/icons-material'
-import { Box, Button, FormGroup, TextField, Typography } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ISignInData } from '../../types/types';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectSignInInfo, signInFetch } from '../../features/AppState/appStateReducer';
 import { ROUTES } from '../../constants/constants';
+import { Home, LocalLibrary } from '@mui/icons-material'
+import { Box, Button, FormGroup, TextField, Typography } from '@mui/material'
 
 export const Login = () => {
   const [isError, setIsError] = useState<Boolean>(false)
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const location = useLocation()
-  
+
   const signInInfo = useAppSelector(selectSignInInfo)
 
   const fromPage = location.state ? location.state.from.pathname : ROUTES.MAIN
 
   const signInRef = useRef<ISignInData>({
-    login:'',
-    password:''
+    login: '',
+    password: ''
   })
 
-  useEffect(()=>{
-    if(signInInfo.success) navigate(fromPage)
-    if(signInInfo.error) setIsError(true)
-  },[signInInfo,navigate,fromPage,setIsError])
+  useEffect(() => {
+    if (signInInfo.success) navigate(fromPage)
+    if (signInInfo.error) setIsError(true)
+  }, [signInInfo, navigate, fromPage, setIsError])
 
-  const handleSignIn = ()=>{
+  const handleSignIn = () => {
     const payload = signInRef.current
     dispatch(signInFetch(payload))
   }
@@ -44,11 +44,11 @@ export const Login = () => {
         height: '100vh'
       }}>
 
-      <Button 
-        variant="text" 
-        startIcon={<Home />} 
-        sx={{color:"black"}}
-        onClick={()=>navigate(ROUTES.MAIN)}>
+      <Button
+        variant="text"
+        startIcon={<Home />}
+        sx={{ color: "black" }}
+        onClick={() => navigate(ROUTES.MAIN)}>
         Go to main page
       </Button>
 
@@ -75,9 +75,9 @@ export const Login = () => {
           gap: "25px",
           flexDirection: "column"
         }}>
-        <TextField label="Login" variant="outlined" onChange={(evt)=>signInRef.current.login = evt.target.value }/>
-        <TextField label="Password" variant="outlined" type="password" onChange={(evt)=>signInRef.current.password = evt.target.value }/>
-        {isError&&<Typography color='error'>{signInInfo.error_text}</Typography>}
+        <TextField label="Login" variant="outlined" onChange={(evt) => signInRef.current.login = evt.target.value} />
+        <TextField label="Password" variant="outlined" type="password" onChange={(evt) => signInRef.current.password = evt.target.value} />
+        {isError && <Typography color='error'>{signInInfo.error_text}</Typography>}
         <Button variant="contained" onClick={handleSignIn}>Sign in</Button>
       </FormGroup>
 
